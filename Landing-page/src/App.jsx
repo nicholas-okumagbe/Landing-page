@@ -7,13 +7,14 @@ import WhyChoose from './Pages/WhyChoose';
 import Testimonia from './Pages/Testimonia';
 import Contact from './Pages/Contact';
 import Footer from './Pages/Footer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import About from './Pages/About';
 import Programs from './Pages/Programs';
 import Research from './Pages/Research';
+import LogIn from './Pages/LogIn';
     
 
-//  component that contains all  landing page sections
+//  component that contains all landing page sections
 function Home() {
   return (
     <>
@@ -27,20 +28,61 @@ function Home() {
   );
 }
 
+function MainContent() {
+  const location = useLocation();
+  const isPrograms = location.pathname === '/programs';
+
+  return (
+    <main className={`min-h-screen ${!isPrograms ? 'bg-black' : ''}`}>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/programs' element={<Programs />} />
+        <Route path='/research' element={<About />} />
+      </Routes>
+    </main>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <main className="bg-black min-h-screen">
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/programs' element={<Programs />} />
-          <Route path='/research' element={<About />} />
-        </Routes>
-      </main>
-      <Footer />
+      <AppContent />
     </BrowserRouter>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+  
+  // ====== ADD ANY PAGE HERE THAT DOESN'T NEED NAV, MAIN & FOOTER ======
+  const pagesWithoutLayout = [
+    '/LogIn',
+    // '/SignUp',
+    // '/ForgotPassword',
+    // Add more pages here as needed
+  ];
+  
+  // Check if current page should NOT have layout
+  const isPageWithoutLayout = pagesWithoutLayout.includes(location.pathname);
+
+  // If it's a page without layout, render ONLY that page
+  if (isPageWithoutLayout) {
+    return (
+      <Routes>
+        <Route path='/LogIn' element={<LogIn />} />
+        
+      </Routes>
+    );
+  }
+
+  // Otherwise, render pages WITH Navbar, MainContent, and Footer
+  return (
+    <>
+      <Navbar />
+      <MainContent />
+      <Footer />
+    </>
   );
 }
 

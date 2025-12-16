@@ -62,7 +62,8 @@ function Navbar() {
           
           {/* Desktop Enroll Button */}
           <div className='hidden md:block'>
-            <button className="bg-teal-800 hover:bg-teal-600 px-3 xl:px-4 py-2 text-white rounded-lg flex flex-row gap-1 font-medium cursor-pointer transition-colors text-sm xl:text-base">
+            <Link to="/LogIn" 
+            className="bg-teal-800 hover:bg-teal-600 px-3 xl:px-4 py-2 text-white rounded-lg flex flex-row gap-1 font-medium cursor-pointer transition-colors text-sm xl:text-base">
               Enroll now 
               <span className="scale-75 ml-1 bg-white text-black rounded w-6 h-7 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right">
@@ -70,7 +71,7 @@ function Navbar() {
                   <path d="m12 5 7 7-7 7"/>
                 </svg>
               </span>
-            </button>
+            </Link>
           </div>
 
           {/* Hamburger Menu Button (Mobile/Tablet - 768px and below) */}
