@@ -12,6 +12,8 @@ import About from './Pages/About';
 import Programs from './Pages/Programs';
 import Research from './Pages/Research';
 import LogIn from './Pages/LogIn';
+import SignIn from './Pages/SignIn';  
+import CreateAccount from './Pages/CreateAccount';
     
 
 //  component that contains all landing page sections
@@ -55,12 +57,12 @@ function App() {
 function AppContent() {
   const location = useLocation();
   
-  // ====== ADD ANY PAGE HERE THAT DOESN'T NEED NAV, MAIN & FOOTER ======
+  //   PAGE  THAT DOESN'T NEED NAV, MAIN & FOOTER
   const pagesWithoutLayout = [
     '/LogIn',
-    // '/SignUp',
-    // '/ForgotPassword',
-    // Add more pages here as needed
+    '/SignIn',
+    '/CreateAccount',
+    
   ];
   
   // Check if current page should NOT have layout
@@ -71,6 +73,8 @@ function AppContent() {
     return (
       <Routes>
         <Route path='/LogIn' element={<LogIn />} />
+        <Route path='/SignIn' element={<SignIn />} />
+        <Route path='/CreateAccount' element={<CreateAccount/>}/>
         
       </Routes>
     );
