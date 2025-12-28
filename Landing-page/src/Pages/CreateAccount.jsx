@@ -1,4 +1,6 @@
-import React from "react";
+import React from "react";  
+import {Link} from 'react-router-dom';
+
 
 
 
@@ -20,8 +22,8 @@ function CreateAccount () {
                 <input placeholder='Full Name *' type='text'  className='border-b-2 border-neutral-500 w-full p-2 outline-none text-sm '></input>
                 <input placeholder='Email Address *' type='email' name='email' className='border-b-2 border-neutral-500 w-full p-2 outline-none text-sm'></input>
                 <input placeholder='Password *' type='password' name='Password' className='border-b-2 border-neutral-500 w-full p-2 outline-none text-sm'></input>
-                <input placeholder='Confirm Password *' type='Password' name='ConfirmPassword' className='border-b-2 border-neutral-500 w-full p-2 outline-none text-sm'></input>
-                <p className='text-sm text-neutral-600 flex justify-center  items-center'>Already have an account? <span className='text-sm text-[#2f584f]'> Login</span></p>
+                <input placeholder='Confirm Password *' type='password' name='ConfirmPassword' className='border-b-2 border-neutral-500 w-full p-2 outline-none text-sm'></input>
+                <p className='text-sm text-neutral-600 flex justify-center  items-center'>Already have an account? <Link to='/SignIn' className='text-sm text-[#2f584f]'> Login</Link></p>
                 <button type='submit' className='bg-[#37685d] hover:bg-[#2f584f] text-white w-full rounded-lg p-2 text-sm cursor-pointer transition-colors mt-4 disabled:opacity-50 disabled:cursor-not-allowed'>Create Account</button>
                 
             </div>

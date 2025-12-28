@@ -14,6 +14,7 @@ import Research from './Pages/Research';
 import LogIn from './Pages/LogIn';
 import SignIn from './Pages/SignIn';  
 import CreateAccount from './Pages/CreateAccount';
+import ForgotPassWord from './Pages/forgotPassWord';
     
 
 //  component that contains all landing page sections
@@ -62,6 +63,7 @@ function AppContent() {
     '/LogIn',
     '/SignIn',
     '/CreateAccount',
+    '/forgotPassWord'
     
   ];
   
@@ -75,6 +77,7 @@ function AppContent() {
         <Route path='/LogIn' element={<LogIn />} />
         <Route path='/SignIn' element={<SignIn />} />
         <Route path='/CreateAccount' element={<CreateAccount/>}/>
+        <Route path='/forgotPassWord' element={<ForgotPassWord/>}/>
         
       </Routes>
     );
