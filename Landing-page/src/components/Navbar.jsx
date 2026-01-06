@@ -110,7 +110,7 @@ function Navbar() {
               }
               
               {/* Mobile Enroll Button */}
-              <button 
+              <Link to="/LogIn" 
                 className="bg-teal-800 hover:bg-teal-600 px-4 py-3 text-white rounded-lg flex flex-row gap-2 items-center justify-center font-medium cursor-pointer transition-colors mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -121,7 +121,7 @@ function Navbar() {
                     <path d="m12 5 7 7-7 7"/>
                   </svg>
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         )}
